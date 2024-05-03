@@ -8,6 +8,7 @@
 import XCTest
 
 final class hw_4UITests: XCTestCase {
+    let app = XCUIApplication()
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -24,10 +25,15 @@ final class hw_4UITests: XCTestCase {
 
     func testExample() throws {
         // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+        
         app.launch()
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func testExampleFail() throws{
+        app.launch()
+        app.buttons["Next"].tap()
     }
 
     func testLaunchPerformance() throws {
